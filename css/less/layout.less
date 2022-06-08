@@ -1,0 +1,854 @@
+/**
+ * File: styles.css
+ * Description : Contains all necessary styling for the BWL Energy Pricing Table 
+ * Author: xenioushk
+ * Credits: http://www.bluewindlab.net
+ * Project: BWL Power Pricing Table (Bootstrap Version)
+ **/
+
+/*========================================================================*/
+/*   TABLE OF CONTENT
+/*========================================================================*/
+/*
+/*     01. PRICING TABLE STYLES
+/*     02. RED THEME
+/*     03. BLUE THEME
+/*     04. GREEN THEME
+/*     05. ORANGE THEME
+/*     06. YELLOW THEME
+/*     07. PRICING TABLE HELPERS
+/*     08. RESPONSIVE STYLING
+/*
+/*========================================================================*/
+
+
+@charset "utf-8";
+.clear {
+  clear: both;
+}
+
+/***********************************************************************************************/
+/*  01. PRICING TABLE STYLES */
+/***********************************************************************************************/
+
+.power-pricing-table {
+  clear: both;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   font-smooth: always;
+   margin-bottom: 24px;
+}
+
+.power-pricing-table .planbg {
+  
+  height: auto;
+  min-height: 500px;
+ .transition(0.6s );
+
+ .drop-shadow(0,0, 1px, 4px, 0.1);
+ .transition( all,  0.6s );
+
+    .plan_price_title {
+        height: 58px;
+        line-height: 32px;
+        padding: 12px 0;
+        width: 100%;
+        background: #353740;
+        margin-left: auto;
+        margin-right: auto;
+        font-family: @heading-font;
+        font-size: 16px;
+        font-weight: 400;
+        color: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+
+    }
+
+    .planholder {
+      width: 100%;
+      background: #fff;
+      border-top: 0px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+      .iconbg {
+            width: 100%;
+            font-size: 54px;
+            color: #fff;
+            text-align: center;
+            padding: 54px 0;
+            display: block;
+            position: relative;
+            overflow: hidden;
+            z-index: 3;
+
+            &:after{
+                
+            }
+
+
+              i {
+                color: @light-text-color;
+                display: inline-block;
+                -webkit-transform: rotateY(0deg);
+                -moz-transform: rotateY(0deg);
+                -ms-transform: rotateY(0deg);
+                -o-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+                box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+                z-index: 10;
+                .transition( all,  1s );
+              }
+
+              &:hover{
+
+                i{
+                    -webkit-transform: rotateY(360deg);
+                    -moz-transform: rotateY(360deg);
+                    -ms-transform: rotateY(360deg);
+                    -o-transform: rotateY(360deg);
+                    transform: rotateY(360deg);
+                    color: darken(@light-text-color, 80%);
+                }
+                
+                 &:after{
+            
+                    
+                }
+
+
+              }
+
+
+      }
+
+      
+    .packagetypebg {
+      width: 100%;
+      background: #353740;
+      position: relative;
+
+      &:after{
+        content: '';
+        position: absolute;
+        right: -14px;
+        top: 38%;
+        width: 24px;
+        height: 24px;
+        .round(100px);
+        display: inline-block;
+        background: @light-bg;
+        z-index: 100;
+      }
+
+      &:before{
+        content: '';
+        position: absolute;
+        left: -14px;
+        top: 38%;
+        width: 24px;
+        height: 24px;
+        .round(100px);
+        display: inline-block;
+        background: @light-bg;
+        z-index: 100;
+      }
+      
+
+      .ribbon-badge{
+            position: absolute;
+            top:2px;
+            right: 2px;
+            display: inline-block;
+            vertical-align: middle;
+            padding: 6px;
+            .round(100%);
+            background: @light-bg;
+            z-index: 2;
+            overflow: hidden;
+
+            &:after{
+                position: absolute;
+                content: '';
+                width: 21px;
+                height: 42px;
+                background: rgba(0,0,0,0.1);
+                top: 0;
+                left: 10px;
+                z-index: 1;
+                -webkit-transform: skewX(50deg);
+                -moz-transform: skewX(50deg);
+                -ms-transform: skewX(50deg);
+                -o-transform: skewX(50deg);
+                transform: skewX(50deg);
+                overflow: hidden;
+            }
+
+            span{
+                display: block;
+                text-align: center;
+                line-height: 15px;
+                z-index: 2;
+            }
+            
+            .amount{
+                font-weight: bold;
+            }
+
+            .badge-text{
+                font-size: 10px;
+            }
+            
+       }
+
+       div.ribbon-red-theme{
+
+            &:after{
+                background: rgba(208,21,28,0.2);
+            }
+
+        }
+
+        div.ribbon-blue-theme{
+
+            &:after{
+                background: rgba(15,100,186,0.2);
+            }
+
+        }
+
+        div.ribbon-green-theme{
+
+            &:after{
+                background: rgba(76,184,73,0.2);
+            }
+
+        }
+
+        div.ribbon-orange-theme{
+
+            &:after{
+                background: rgba(255,104,21,0.3);
+            }
+
+        }
+
+        div.ribbon-yellow-theme{
+
+            &:after{
+                background: rgba(252,209,2,0.3);
+            }
+
+        }
+
+    }
+
+    .package_amount_duration {
+       
+      position: relative; 
+      overflow: hidden;
+      text-align: center;
+      line-height: 24px;
+      display: block;
+      padding: 24px 0 12px 0;
+      font-weight: 400;
+      color: @light-text-color;
+      text-transform: uppercase;
+      z-index: 10;
+
+      span.amount{
+            font-family: @heading-font;
+            font-size: 32px;
+            font-weight: 300;
+            display: block;
+            margin-bottom: 12px;
+
+            i{
+                font-style: normal;
+                font-size: 24px;
+            }
+
+        }
+
+        span.duration{
+            font-family: @body-font;
+            font-size: 12px;
+            font-weight: bold;
+            display: block;
+            position: relative;
+
+            &:before{
+
+                position: absolute;
+                content: '';
+                width: 24px;
+                height: 2px;
+                background: @light-bg;
+                left: 45%;
+                top: -3px;
+                display: inline-block;
+
+            }
+
+        }
+
+    }
+
+
+    .features {
+      list-style-type: none;
+      margin: 0px;
+      padding: 0px;
+      border-left: 0px solid #e5e5e5;
+      border-right: 0px solid #e5e5e5;
+    }
+
+    .features li {
+      font-family: @body-font;
+      list-style: none;
+      text-align: left;
+      background: #f00;
+      background: #fff;
+      border: 1px solid #e5e5e5;
+      border-left: 0px;
+      border-right: 0px;
+      border-top: 0px;
+      width: 100%;
+      margin: 0;
+      padding: 12px;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      font-size: 13px;
+      font-weight: bold;
+      color: #3b3b3b;
+      .transition( all,  0.3s );
+
+      i{
+            font-size: 16px;
+            font-weight: bold;
+      }
+      
+        &:hover{
+
+            background: rgba(195,195,195, 0.1);
+
+        }
+
+    }
+
+    .selectpackage {
+      font-family: @body-font;
+      font-size: 12px;
+      width: 100%;
+      list-style: none;
+      padding: 0;
+      padding-bottom: 1px !important;
+      border: 0;
+      margin-top: 0px;
+
+      a {
+        text-decoration: none;
+        color: @light-text-color;
+        background: @red-theme-bg;
+        width: 50%;
+        height: 42px;
+        line-height: 42px;
+        padding: 0px;
+        text-transform: Uppercase;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+        margin:12px auto;
+        position: relative;
+        .transition( all,  0.3s );
+        overflow: hidden;
+
+            &:after{
+                content: '';
+                position: absolute;
+                right: -10px;
+                top: 32%;
+                width: 16px;
+                height: 16px;
+                .round(100px);
+                display: inline-block;
+                background: @light-bg;
+                z-index: 100;
+              }
+
+              &:before{
+                content: '';
+                position: absolute;
+                left: -10px;
+                top: 32%;
+                width: 16px;
+                height: 16px;
+                .round(100px);
+                display: inline-block;
+                background: @light-bg;
+                z-index: 100;
+              }
+
+
+            &:hover,
+            &:focus{
+
+                background: darken(@red-theme-bg,20%);
+
+                &:after{
+                     
+
+                   }
+            }
+
+            i{
+                font-size: 16px;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+.power-pricing-table{
+
+/***********************************************************************************************/
+/* 02. RED THEME */
+/***********************************************************************************************/
+    .red_theme{
+
+        .plan_price_title {
+            border-bottom: 3px solid @red-theme-bg;
+        }     
+
+        .packagetypebg {
+            border-top: 3px solid @red-theme-bg;
+        }
+
+        .features li {
+            .transition( all,  0.3s );
+
+            &:hover {
+              color: @red-theme-bg;
+              border-color: @light-border-color;
+            }
+
+        }
+
+       .iconbg {
+            background: @red-theme-bg;
+            color: @light-text-color;
+
+
+        }
+
+        .selectpackage {
+
+           a {
+
+             color: @light-text-color;
+             background: @red-theme-bg;
+                 &:hover,
+                 &:focus{
+
+                     background: darken(@red-theme-bg,20%);
+                 }
+
+             }
+
+         }
+
+      .ribbon {
+
+            .ribbon-container {
+               
+                border-left: 1px solid @light-border-color;
+                border-right: 1px solid @light-border-color;
+                border-bottom: 1px solid @light-border-color;
+            }
+
+            .ribbon-base {
+           
+                background: darken(@red-theme-bg, 10%);
+
+                &:before {
+                    
+                    border-left: 1px dashed @red-theme-bg;
+                    border-right: 1px dashed @red-theme-bg;
+                    border-bottom: 1px dashed @red-theme-bg;
+                }
+
+            }
+
+            .ribbon-text{
+
+                color: @light-text-color;
+
+            }
+
+        }
+
+    }
+    
+
+/***********************************************************************************************/
+/* 03. BLUE THEME */
+/***********************************************************************************************/
+    .blue_theme{
+
+        .plan_price_title {
+            border-bottom: 3px solid @blue-theme-bg;
+        }     
+
+        .packagetypebg {
+            border-top: 3px solid @blue-theme-bg;
+        }
+
+        .features li {
+            .transition( all,  0.3s );
+
+            &:hover {
+              color: @blue-theme-bg;
+              border-color: @light-border-color;
+            }
+
+        }
+
+       .iconbg {
+            background: @blue-theme-bg;
+            color: @light-text-color;
+
+        }
+
+        .selectpackage {
+
+           a {
+
+             color: @light-text-color;
+             background: @blue-theme-bg;
+                 &:hover,
+                 &:focus{
+
+                     background: darken(@blue-theme-bg,20%);
+                 }
+
+             }
+
+         }
+
+      .ribbon {
+
+            .ribbon-container {
+               
+                border-left: 1px solid @light-border-color;
+                border-right: 1px solid @light-border-color;
+                border-bottom: 1px solid @light-border-color;
+            }
+
+            .ribbon-base {
+           
+                background: darken(@blue-theme-bg, 10%);
+
+                &:before {
+                    
+                    border-left: 1px dashed @blue-theme-bg;
+                    border-right: 1px dashed @blue-theme-bg;
+                    border-bottom: 1px dashed @blue-theme-bg;
+                }
+
+            }
+
+            .ribbon-text{
+
+                color: @light-text-color;
+
+            }
+
+        }
+
+    }
+
+/***********************************************************************************************/
+/* 04. GREEN THEME */
+/***********************************************************************************************/
+
+    .green_theme{
+
+        .plan_price_title {
+            border-bottom: 3px solid @green-theme-bg;
+        }     
+
+        .packagetypebg {
+            border-top: 3px solid @green-theme-bg;
+        }
+
+        .features li {
+            .transition( all,  0.3s );
+
+            &:hover {
+              color: @green-theme-bg;
+              border-color: @light-border-color;
+            }
+
+        }
+
+       .iconbg {
+            background: @green-theme-bg;
+            color: @light-text-color;
+
+        }
+
+
+        .selectpackage {
+
+           a {
+
+             color: @light-text-color;
+             background: @green-theme-bg;
+                 &:hover,
+                 &:focus{
+
+                     background: darken(@green-theme-bg,20%);
+                 }
+
+             }
+
+         }
+
+      .ribbon {
+
+            .ribbon-container {
+               
+                border-left: 1px solid @light-border-color;
+                border-right: 1px solid @light-border-color;
+                border-bottom: 1px solid @light-border-color;
+            }
+
+            .ribbon-base {
+           
+                background: darken(@green-theme-bg, 10%);
+ 
+
+                &:before {
+                    
+                    border-left: 1px dashed @green-theme-bg;
+                    border-right: 1px dashed @green-theme-bg;
+                    border-bottom: 1px dashed @green-theme-bg;
+                }
+
+            }
+
+            .ribbon-text{
+
+                color: @light-text-color;
+
+            }
+
+
+        }
+
+
+}
+
+
+/***********************************************************************************************/
+/* 05. ORANGE THEME */
+/***********************************************************************************************/
+    .orange_theme{
+
+        .plan_price_title {
+            border-bottom: 3px solid @orange-theme-bg;
+        }     
+
+        .packagetypebg {
+            border-top: 3px solid @orange-theme-bg;
+        }
+
+        .features li {
+            .transition( all,  0.3s );
+
+            &:hover {
+              color: @orange-theme-bg;
+              border-color: @light-border-color;
+            }
+
+        }
+
+       .iconbg {
+            background: @orange-theme-bg;
+            color: @light-text-color;
+
+        }
+
+        .selectpackage {
+
+           a {
+
+             color: @light-text-color;
+             background: @orange-theme-bg;
+                 &:hover,
+                 &:focus{
+
+                     background: darken(@orange-theme-bg,20%);
+                 }
+
+             }
+
+         }
+
+      .ribbon {
+
+            .ribbon-container {
+               
+                border-left: 1px solid @light-border-color;
+                border-right: 1px solid @light-border-color;
+                border-bottom: 1px solid @light-border-color;
+            }
+
+            .ribbon-base {
+           
+                background: darken(@orange-theme-bg, 10%);
+
+                &:before {
+                    
+                    border-left: 1px dashed @orange-theme-bg;
+                    border-right: 1px dashed @orange-theme-bg;
+                    border-bottom: 1px dashed @orange-theme-bg;
+                }
+
+            }
+
+            .ribbon-text{
+
+                color: @light-text-color;
+
+            }
+
+        }
+
+    }
+
+
+/***********************************************************************************************/
+/* 06. YELLOW THEME */
+/***********************************************************************************************/
+    .yellow_theme{
+
+        .plan_price_title {
+            border-bottom: 3px solid @yellow-theme-bg;
+        }     
+
+        .packagetypebg {
+            border-top: 3px solid @yellow-theme-bg;
+        }
+
+        .features li {
+            .transition( all,  0.3s );
+
+            &:hover {
+              color: @yellow-theme-bg;
+              border-color: @light-border-color;
+            }
+
+        }
+
+       .iconbg {
+            background: @yellow-theme-bg;
+            color: @light-text-color;
+
+        }
+
+        .selectpackage {
+
+           a {
+
+             color: @light-text-color;
+             background: @yellow-theme-bg;
+                 &:hover,
+                 &:focus{
+
+                     background: darken(@yellow-theme-bg,20%);
+                 }
+
+             }
+
+         }
+
+      .ribbon {
+
+            .ribbon-container {
+               
+                border-left: 1px solid @light-border-color;
+                border-right: 1px solid @light-border-color;
+                border-bottom: 1px solid @light-border-color;
+            }
+
+            .ribbon-base {
+           
+                background: darken(@yellow-theme-bg, 10%);
+
+                &:before {
+                    
+                    border-left: 1px dashed @yellow-theme-bg;
+                    border-right: 1px dashed @yellow-theme-bg;
+                    border-bottom: 1px dashed @yellow-theme-bg;
+                }
+
+            }
+
+            .ribbon-text{
+
+                color: @light-text-color;
+
+            }
+
+        }
+
+    }
+
+
+
+}
+
+/***********************************************************************************************/
+/* 07. PRICING TABLE HELPERS */
+/***********************************************************************************************/
+
+.bpt-align-left{
+    text-align: left;
+}
+
+.bpt-align-center{
+    text-align: center;
+}
+
+.bpt-align-right{
+    text-align: right;
+}
+
+
+/***********************************************************************************************/
+/* 08. RESPONSIVE STYLING */
+/***********************************************************************************************/
+
+@media only screen and (min-width: 0px) and (max-width: 479px) {
+    .power-pricing-table{
+        
+        margin-bottom: 24px;
+        
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 1000px) {
+
+}
